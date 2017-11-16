@@ -9,10 +9,12 @@ var guessesSoFar = [];
 
 // Computer random guessing
 var computerGuess = letters[Math.floor(Math.random() * letters.length)];
+    console.log(computerGuess);
 
 // Event Listeners
 document.onkeypress = function(event) {
     var userGuess = event.key;
+    console.log(userGuess);
 
 // Scoring
 
@@ -22,6 +24,9 @@ document.onkeypress = function(event) {
     }else{
         guesses--;
         document.getElementById('guesses').innerHTML = guesses;
+        guessesSoFar.push(userGuess);
+        document.getElementById('guessesSoFar').innerHTML = guessesSoFar;
+
     }
     if(guesses === 0){
         losses++;
@@ -30,8 +35,7 @@ document.onkeypress = function(event) {
         document.getElementById('losses').innerHTML = losses;
     }  
  
-
+    
 }  
-
 
 // How to push userGuess var guessesSoFar = userGuess.push(); or guessesSoFar.push(userGuess);
